@@ -1,0 +1,18 @@
+{
+  "name": "dapp-example",
+  "version": "1.0.0",
+  "description": "dApp Example Template",
+  "main": "index.js",
+  "scripts": {
+    "print-stuff": "echo $TEST_WALLET_KEY",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MexicanAce",
+  "license": "ISC",
+  "stackblitz": {
+    "startCommand": "npm install && npm run print-stuff",
+    "env": {
+      "TEST_WALLET_KEY": "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110"
+    }
+  }
+}
