@@ -4,9 +4,11 @@
   "description": "dApp Example Template",
   "main": "index.js",
   "scripts": {
-    "print-stuff": "echo $TEST_WALLET_KEY",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MexicanAce",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "solc": "^0.8.26"
+  }
 }

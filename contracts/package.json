@@ -1,0 +1,8 @@
+{
+  "name": "dapp-example-contracts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "compile": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/"
+  }
+}
