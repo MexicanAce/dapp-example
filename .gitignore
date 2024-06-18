@@ -1,3 +1,6 @@
+contracts/generated
+node_modules
+
 # Logs
 logs
 *.log
