@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "print-stuff": "echo $TEST_WALLET_KEY",
+    "start-etn": "node launch.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MexicanAce",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "solc": "^0.8.26"
+    "ganache": "^7.9.2",
+    "solc": "^0.8.26",
+    "truffle": "^5.11.5"
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommand": "cd contracts/ && npm run compile",
+    "startCommand": "cd contracts/ && npm run compile && cd .. && npm run start-etn && cd contracts && npm example",
     "env": {
       "TEST_WALLET_KEY": "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110"
     }

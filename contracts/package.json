@@ -2,6 +2,12 @@
   "name": "dapp-example-contracts",
   "version": "1.0.0",
   "scripts": {
-    "compile": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/"
+    "compile": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/",
+    "start-etn": "node --openssl-legacy-provider index.js",
+    "example": "node example.js"
+  },
+  "dependencies": {
+    "ganache-cli": "^6.12.2",
+    "web3": "^4.10.0"
   }
 }
