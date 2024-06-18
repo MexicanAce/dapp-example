@@ -2,7 +2,9 @@
   "name": "dapp-example-contracts",
   "version": "1.0.0",
   "scripts": {
-    "compile": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/",
+    "compile2": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/",
+    "compile": "node compile.js",
+    "deploy": "node deploy.js",
     "start-etn": "node --openssl-legacy-provider index.js",
     "example": "node example.js"
   }
