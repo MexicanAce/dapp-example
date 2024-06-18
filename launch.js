@@ -6,4 +6,6 @@ const child = spawn('sh', ['-c', "cd contracts && npm run start-etn >> server.lo
 });
 
 child.unref();
+// Wait 1 second
+await new Promise(resolve => setTimeout(resolve, 1000));
 console.log('Ganache server started in the background');
