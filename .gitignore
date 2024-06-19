@@ -1,5 +1,6 @@
 contracts/generated
 node_modules
+contracts/cache
 
 # Logs
 logs

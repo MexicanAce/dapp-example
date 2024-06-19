@@ -5,7 +5,7 @@
     "compile2": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/",
     "compile": "node compile.js",
     "deploy2": "node deploy.js",
-    "deploy": "hardhat deploy --script deploy.ts",
+    "deploy": "hardhat run scripts/deploy.ts",
     "start-etn": "node --openssl-legacy-provider index.js",
     "example": "node example.js"
   }
