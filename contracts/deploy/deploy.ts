@@ -1,25 +1,26 @@
-import { ethers } from "ethers";
 import { Provider, Wallet } from "zksync-ethers";
+import * as hre from "hardhat";
 import { Deployer } from "@matterlabs/hardhat-zksync";
-import { DeployFunction } from "hardhat-deploy/types";
-import { HardhatRuntimeEnvironment } from "hardhat/types";
-import Greeter from "../Greeter.json";
+// import { DeployFunction } from "hardhat-deploy/types";
+// import { HardhatRuntimeEnvironment } from "hardhat/types";
+import { ethers } from "ethers";
+// import Greeter from "../Greeter.json";
 
-const deploy2 = async function () {
-  const provider = new ethers.JsonRpcProvider("https://zksync-devnet.nethermind.io");
-  const wallet = new ethers.Wallet(
-    "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
-    provider
-  );
-  const contract = new ethers.ContractFactory(Greeter.abi, Greeter.bytecode);
-  const tx = await contract.connect(wallet).deploy();
-  console.log(tx);
-  const address = await tx.getAddress();
-  console.log(address);
-};
+// const deploy2 = async function () {
+//   const provider = new ethers.JsonRpcProvider("https://zksync-devnet.nethermind.io");
+//   const wallet = new ethers.Wallet(
+//     "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+//     provider
+//   );
+//   const contract = new ethers.ContractFactory(Greeter.abi, Greeter.bytecode);
+//   const tx = await contract.connect(wallet).deploy();
+//   console.log(tx);
+//   const address = await tx.getAddress();
+//   console.log(address);
+// };
 
-const deploy = async function () {
-  const provider = new Provider("demonet");
+const deploy = async (contractArtifactName: string, constructorArguments?: any[]) => {
+  const provider = new Provider("https://zksync-devnet.nethermind.io");
   const wallet = new Wallet(
     "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
     provider
@@ -33,18 +34,19 @@ const deploy = async function () {
       throw error;
     }
   });
+  console.log(artifact);
 
   // Estimate contract deployment fee
   const deploymentFee = await deployer.estimateDeployFee(artifact, constructorArguments || []);
   console.log(`Estimated deployment cost: ${ethers.formatEther(deploymentFee)} ETH`);
 
-  // Check if the wallet has enough balance
-  await verifyEnoughBalance(wallet, deploymentFee);
-
   // Deploy the contract to zkSync
-  const contract = await deployer.deploy(artifact, constructorArguments);
+  const contract = await deployer.deploy(artifact, constructorArguments || []);
+  console.log('xxx');
   const address = await contract.getAddress();
-  const constructorArgs = contract.interface.encodeDeploy(constructorArguments);
+  console.log('xxx');
+  const constructorArgs = contract.interface.encodeDeploy(constructorArguments || []);
+  console.log('xxx');
   const fullContractSource = `${artifact.sourceName}:${artifact.contractName}`;
 
   // Display contract deployment info
@@ -54,4 +56,6 @@ const deploy = async function () {
   console.log(` - Encoded constructor arguments: ${constructorArgs}\n`);
 }
 
-deploy();
+export default async function () {
+  await deploy("Greeter");
+}
