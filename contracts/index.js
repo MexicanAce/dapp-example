@@ -9,7 +9,7 @@ const options = {
   ],
 };
 const server = ganache.server(options);
-const PORT = 8051; // 0 means any available port
+const PORT = 8050; // 0 means any available port
 console.log(`Starting server with port ${PORT}`);
 server.listen(PORT, async (err) => {
   if (err) throw err;
