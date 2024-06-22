@@ -1,4 +1,4 @@
-contracts/generated
+contracts/artifacts
 node_modules
 contracts/cache
 

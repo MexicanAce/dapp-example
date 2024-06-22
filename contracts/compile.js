@@ -8,7 +8,7 @@ async function main() {
   const { abi, bytecode } = compile(sourceCode, "Greeter");
   // Store the ABI and Bytecode into a JSON file
   const artifact = JSON.stringify({ abi, bytecode }, null, 2);
-  await fs.writeFile("Greeter.json", artifact);
+  await fs.writeFile("artifacts/contracts/Greeter.sol/Greeter.json", artifact);
 }
 
 function compile(sourceCode, contractName) {

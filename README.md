@@ -8,7 +8,7 @@ In the URL above, change `https://` to `https://pr.new/`, this should open this 
 
 * Starts up Stackblitz instance
 * Installs all npm packages
-* Uses `solcjs` to compile `contracts/Greeter.sol` (output is `contracts/Greeter.json`)
+* Uses `solcjs` to compile `contracts/Greeter.sol` (output is `contracts/artifacts/contracts/Greeter.sol/Greeter.json`)
 * Starts an In-Memory Ethereum Node using Ganache (port `8050`) with one Rich Wallet (`0x36615cf349d7f6344891b1e7ca7c72883f5dc049`)
 * Runs `contracts/example.js` to validate the node is running and the Rich Wallet has a balance of `100 ETH`
 * (TODO) ~Deploys Greeter.json to the In-Memory Ethereum Node~
