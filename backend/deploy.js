@@ -5,12 +5,15 @@ const { Web3 } = require("web3");
 const fs = require("fs");
 const { abi, bytecode } = JSON.parse(fs.readFileSync("Greeter.json"));
 
+const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8050';
+const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY;
+
 async function main() {
   // Configuring the connection to an Ethereum node
-  const web3 = new Web3("http://localhost:8050");
+  const web3 = new Web3(`http://localhost:${NODE_PORT}`);
   // Creating a signing account from a private key
   const signer = web3.eth.accounts.privateKeyToAccount(
-    '0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110', // 0x36615Cf349d7F6344891B1e7CA7C72883F5dc049
+    TEST_WALLET_KEY
   );
   web3.eth.accounts.wallet.add(signer);
   console.log(`Account for deployment: ${signer.address}`);

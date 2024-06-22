@@ -3,12 +3,15 @@ import { Provider, Wallet } from "zksync-ethers";
 import { Deployer } from "@matterlabs/hardhat-zksync";
 import { DeployFunction } from "hardhat-deploy/types";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
-import Greeter from "../Greeter.json";
+import Greeter from "../artifacts/contracts/Greeter.sol/Greeter.json";
+
+const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8050';
+const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY;
 
 const deploy2 = async function () {
   const provider = new ethers.JsonRpcProvider("https://zksync-devnet.nethermind.io");
   const wallet = new ethers.Wallet(
-    "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+    TEST_WALLET_KEY!,
     provider
   );
   const contract = new ethers.ContractFactory(Greeter.abi, Greeter.bytecode);
@@ -21,7 +24,7 @@ const deploy2 = async function () {
 const deploy = async function () {
   const provider = new Provider("demonet");
   const wallet = new Wallet(
-    "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+    TEST_WALLET_KEY!,
     provider
   );
   const deployer = new Deployer(hre, wallet);

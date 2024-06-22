@@ -4,12 +4,14 @@ import { Deployer } from "@matterlabs/hardhat-zksync";
 // import { DeployFunction } from "hardhat-deploy/types";
 // import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { ethers } from "ethers";
+const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8050';
+const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY;
 // import Greeter from "../Greeter.json";
 
 // const deploy2 = async function () {
 //   const provider = new ethers.JsonRpcProvider("https://zksync-devnet.nethermind.io");
 //   const wallet = new ethers.Wallet(
-//     "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+//     TEST_WALLET_KEY,
 //     provider
 //   );
 //   const contract = new ethers.ContractFactory(Greeter.abi, Greeter.bytecode);
@@ -22,7 +24,7 @@ import { ethers } from "ethers";
 const deploy = async (contractArtifactName: string, constructorArguments?: any[]) => {
   const provider = new Provider("https://zksync-devnet.nethermind.io");
   const wallet = new Wallet(
-    "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+    TEST_WALLET_KEY!,
     provider
   );
   const deployer = new Deployer(hre, wallet);
