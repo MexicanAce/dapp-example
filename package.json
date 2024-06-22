@@ -20,9 +20,11 @@
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommand": "cd contracts/ && yarn compile && cd .. && yarn start-etn && cd contracts/ && yarn deploy && cd ../frontend && npm install && open http://localhost:3000 && npm run dev",
+    "startCommand": "cd backend/ && yarn compile && cd .. && yarn start-etn && cd backend/ && yarn deploy && cd ../frontend && npm install && open http://localhost:3000 && npm run dev",
     "env": {
-      "TEST_WALLET_KEY": "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110"
+      "TEST_WALLET_KEY": "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+      "TEST_WALLET_ADDRESS": "0x36615Cf349d7F6344891B1e7CA7C72883F5dc049",
+      "NODE_PORT": "8050"
     }
   },
   "devDependencies": {

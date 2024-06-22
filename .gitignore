@@ -1,6 +1,6 @@
-contracts/generated
+backend/artifacts
+backend/cache
 node_modules
-contracts/cache
 
 # Logs
 logs
