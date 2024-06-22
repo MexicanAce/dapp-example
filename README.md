@@ -2,7 +2,10 @@
 
 ## Getting Started
 
-In the URL above, change `https://` to `https://pr.new/`, this should open this repo within StackBlitz CodeFlow.
+There are 2 ways to test out this example:
+
+1. [![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https:///pr.new/mexicanace/dapp-example)
+2. Update the URL of your browser from `https://` to `https://pr.new/`, this should open this repo within StackBlitz CodeFlow.
 
 ## What does this test repo do?
 
