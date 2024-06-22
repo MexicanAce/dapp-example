@@ -8,6 +8,9 @@ async function main() {
   const { abi, bytecode } = compile(sourceCode, "Greeter");
   // Store the ABI and Bytecode into a JSON file
   const artifact = JSON.stringify({ abi, bytecode }, null, 2);
+  fs.mkdir('artifacts/contracts/Greeter.sol', { recursive: true }, (err) => {
+    if (err) throw err;
+  });
   await fs.writeFile("artifacts/contracts/Greeter.sol/Greeter.json", artifact);
 }
 
