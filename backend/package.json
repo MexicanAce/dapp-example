@@ -4,9 +4,9 @@
   "scripts": {
     "compile": "node compile.js",
     "compile2": "solcjs -p --abi --bin --base-path . Greeter.sol -o generated/",
-    "deploy-test": "echo \"Deploying smart contracts is not working yet, moving on...\"",
+    "deploy": "echo \"Deploying smart contracts is not working yet, moving on...\"",
     "deploy2": "hardhat run scripts/deploy.ts",
-    "deploy": "node deploy.js",
+    "deploy3": "node deploy.js",
     "deploy4": "hardhat deploy-zksync --script deploy.ts",
     "start-etn": "node --openssl-legacy-provider index.js",
     "example": "node example.js"

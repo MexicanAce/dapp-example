@@ -23,9 +23,8 @@ async function main() {
   contract.options.data = bytecode;
   const deployTx = contract.deploy();
 
-  // TODO: Fix below... I think private key is wrong
   const gasEstimate = await deployTx.estimateGas();
-  console.log(gasEstimate);
+  console.log(`Gas Estimate: ${Web3.utils.fromWei(gasEstimate, "ether")} ETH`);
   const deployedContract = await deployTx
     .send({
       from: signer.address,
