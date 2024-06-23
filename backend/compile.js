@@ -2,6 +2,7 @@ const fs = require("fs").promises;
 const solc = require("solc");
 
 async function main() {
+  console.log(solc.version());
   // Load the contract source code
   const sourceCode = await fs.readFile("contracts/Greeter.sol", "utf8");
   // Compile the source code and retrieve the ABI and Bytecode
@@ -23,6 +24,10 @@ function compile(sourceCode, contractName) {
   };
   // Parse the compiler output to retrieve the ABI and Bytecode
   const output = solc.compile(JSON.stringify(input));
+  if (output.errors) {
+    console.log(output.errors[0]);
+  }
+
   const artifact = JSON.parse(output).contracts.main[contractName];
   return {
     abi: artifact.abi,

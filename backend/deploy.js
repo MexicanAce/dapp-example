@@ -3,10 +3,10 @@ const { Web3 } = require("web3");
 // Loading the contract ABI and Bytecode
 // (the results of a previous compilation step)
 const fs = require("fs");
-const { abi, bytecode } = JSON.parse(fs.readFileSync("Greeter.json"));
+const { abi, bytecode } = JSON.parse(fs.readFileSync("artifacts/contracts/Greeter.sol/Greeter.json"));
 
 const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8050';
-const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY;
+const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY || "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110";
 
 async function main() {
   // Configuring the connection to an Ethereum node
