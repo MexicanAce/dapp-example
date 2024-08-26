@@ -1,7 +1,7 @@
 import {HardhatUserConfig} from 'hardhat/types';
 // import 'hardhat-deploy';
 // import 'hardhat-deploy-ethers';
-import "@matterlabs/hardhat-zksync";
+// import "@matterlabs/hardhat-zksync";
 
 const config: HardhatUserConfig = {
   solidity: {

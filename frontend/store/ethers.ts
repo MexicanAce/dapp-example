@@ -37,9 +37,9 @@ export const chains: Chain[] = [
         {
           id: 1337,
           name: "Local Ganache Node",
-          // rpcUrl: 'http://localhost:8050',
-          rpcUrl: window.location.href.replace("3000", "8050"),
-          blockExplorerUrl: window.location.href.replace("3000", "8050")
+          // rpcUrl: 'http://localhost:8545',
+          rpcUrl: window.location.href.replace("3000", "8545"),
+          blockExplorerUrl: window.location.href.replace("3000", "8545")
         },
         {
           id: 270,
@@ -72,7 +72,7 @@ export const useEthers = defineStore("ethers", () => {
     if (!getEthereumContext()) throw new Error("No injected wallets found")
 
     // web3Provider = new BrowserProvider((window as any).ethereum, "any");
-    web3Provider = new JsonRpcProvider(window.location.href.replace("3000", "8050"));
+    web3Provider = new JsonRpcProvider(window.location.href.replace("3000", "8545"));
     // const accounts = await web3Provider?.send("eth_requestAccounts", [])
     const accounts = await web3Provider?.send("eth_accounts", [])
     if (accounts.length > 0) {

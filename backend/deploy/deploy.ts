@@ -4,7 +4,7 @@ import { Deployer } from "@matterlabs/hardhat-zksync";
 // import { DeployFunction } from "hardhat-deploy/types";
 // import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { ethers } from "ethers";
-const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8050';
+const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8545';
 const TEST_WALLET_KEY = process.env.npm_package_stackblitz_env_TEST_WALLET_KEY;
 // import Greeter from "../Greeter.json";
 

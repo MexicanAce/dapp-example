@@ -6,6 +6,7 @@
   "scripts": {
     "print-stuff": "echo $TEST_WALLET_KEY",
     "start-etn": "node launch.js",
+    "start-etn2": "node launch2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MexicanAce",
@@ -20,11 +21,11 @@
   },
   "stackblitz": {
     "installDependencies": true,
-    "startCommand": "cd backend/ && npm i && yarn compile && cd .. && yarn start-etn && cd backend/ && yarn deploy && cd ../frontend && npm install && open http://localhost:3000 && npm run dev",
+    "startCommand": "cd backend/ && npm i && yarn compile && yarn start-etn2 && yarn deploy && cd ../frontend && npm install && open http://localhost:3000 && npm run dev",
     "env": {
-      "TEST_WALLET_KEY": "0x7726827caac94a7f9e1b160f7ea819f172f7b6f9d2a97f992c38edeab82d4110",
+      "TEST_WALLET_KEY": "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
       "TEST_WALLET_ADDRESS": "0x36615Cf349d7F6344891B1e7CA7C72883F5dc049",
-      "NODE_PORT": "8050"
+      "NODE_PORT": "8545"
     }
   },
   "devDependencies": {
@@ -37,7 +38,7 @@
     "chai-ethers": "^0.0.1",
     "dotenv": "^16.4.5",
     "ethers": "6.9.2",
-    "hardhat": "^2.22.5",
+    "hardhat": "^2.22.9",
     "hardhat-deploy": "^0.12.4",
     "hardhat-deploy-ethers": "^0.4.2",
     "mocha": "^10.4.0",

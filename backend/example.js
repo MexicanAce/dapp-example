@@ -1,6 +1,6 @@
 const { Web3 } = require('web3');
 
-const url = "http://localhost:8050";
+const url = "http://localhost:8545";
 const richWalletAddress = "0x36615Cf349d7F6344891B1e7CA7C72883F5dc049";
 var client = new Web3(url);
 
