@@ -17,7 +17,7 @@ async function main() {
     const updatedData = data.replace('// enable logging', '// FIXED: enable logging\nreturn provider;');
     await fs.writeFile(nodeTaskToFix, updatedData, 'utf8');
 
-    const child = spawn('sh', ['-c', "hardhat node >> server.log"], {
+    const child = spawn('sh', ['-c', "hardhat node --network hardhat >> server.log"], {
       detached: true,
       stdio: 'ignore'
     });

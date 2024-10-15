@@ -28,7 +28,6 @@
     }
   },
   "devDependencies": {
-    "@matterlabs/hardhat-zksync": "^1.1.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.2",
     "@types/chai": "^4.3.16",
     "@types/mocha": "^10.0.6",
@@ -42,7 +41,6 @@
     "hardhat-deploy-ethers": "^0.4.2",
     "mocha": "^10.4.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
-    "zksync-ethers": "^6.9.0"
+    "typescript": "^5.4.5"
   }
 }
