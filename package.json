@@ -6,7 +6,6 @@
   "scripts": {
     "print-stuff": "echo $TEST_WALLET_KEY",
     "start-etn": "node launch.js",
-    "start-etn2": "node launch2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MexicanAce",

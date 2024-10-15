@@ -1,6 +1,6 @@
-import { spawn } from 'child_process';
-import { Web3 } from 'web3';
-import { promises as fs } from 'fs';
+const spawn = require("child_process").spawn;
+const Web3 = require("web3").Web3;
+const fs = require("fs").promises;
 
 const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8545';
 const TEST_WALLET_ADDRESS = process.env.npm_package_stackblitz_env_TEST_WALLET_ADDRESS;

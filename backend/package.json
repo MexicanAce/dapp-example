@@ -9,6 +9,7 @@
     "deploy3": "node deploy.js",
     "deploy4": "hardhat deploy-zksync --script deploy.ts",
     "start-etn": "node --openssl-legacy-provider index.js",
+    "start-etn2": "node launch2.js",
     "example": "node example.js"
   },
   "dependencies": {
