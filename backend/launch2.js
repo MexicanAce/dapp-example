@@ -1,5 +1,5 @@
 const spawn = require("child_process").spawn;
-const Web3 = require("web3").Web3;
+const web3 = require("web3");
 const fs = require("fs").promises;
 
 const NODE_PORT = process.env.npm_package_stackblitz_env_NODE_PORT || '8545';
@@ -35,7 +35,7 @@ async function main() {
     
     while(client == null && attemptCounter < retryAttempts) {
       try {
-        client = new Web3(url);
+        client = new web3.Web3(url);
         await client.eth.getChainId();
       } catch (error) {
         client = null;
@@ -53,7 +53,7 @@ async function main() {
         log(`Accounts available: ${x}`);
     });
     client.eth.getBalance(richWalletAddress).then(x => {
-        log(`Balance of ${richWalletAddress}: ${Web3.utils.fromWei(x, "ether")} ETH`);
+        log(`Balance of ${richWalletAddress}: ${web3.Web3.utils.fromWei(x, "ether")} ETH`);
     });
   } catch (err) {
     console.error('Error:', err);

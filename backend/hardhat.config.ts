@@ -7,7 +7,7 @@ const config: HardhatUserConfig = {
   solidity: {
     version: '0.7.6',
   },
-  defaultNetwork: "demonet",
+  defaultNetwork: "hardhat",
   networks: {
     demonet: {
       url: "https://zksync-devnet.nethermind.io",
